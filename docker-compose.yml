@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    build: db
+  fpm:
+    build: fpm
+    volumes:
+      - ./src:/var/www/html
+    links:
+      - db
+  web:
+    build: web
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - fpm
+    volumes:
+      - ./src:/var/www/html

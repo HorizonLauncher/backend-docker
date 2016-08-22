@@ -1,0 +1,6 @@
+FROM mysql:latest
+
+ENV MYSQL_RANDOM_ROOT_PASSWORD yes
+ENV MYSQL_DATABASE horizon
+ENV MYSQL_USER horizon
+ENV MYSQL_PASSWORD horizon_password
